@@ -1,8 +1,9 @@
 package pharmacyDrug.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pharmacyDrug.data.models.Drug;
-import pharmacyDrug.data.repositories.Drugs;
+import pharmacyDrug.data.repositories.DrugsImpl;
 import pharmacyDrug.dtos.AvailableDrugResponse;
 import pharmacyDrug.dtos.BuyDrugsRequest;
 import pharmacyDrug.dtos.DrugRequest;
@@ -20,14 +21,9 @@ import static pharmacyDrug.utils.Validator.validate;
 
 @Service
 public class DrugService implements DrugServiceImpl {
+    @Autowired
+    private DrugsImpl repository;
 
-    private final Drugs repository;
-
-    public DrugService(Drugs repository) {
-        this.repository = repository;
-    }
-
-@Override
     public DrugResponse addDrug(DrugRequest request) {
         validate(request);
         Drug toSave = map(request);
@@ -35,9 +31,8 @@ public class DrugService implements DrugServiceImpl {
         return map(saved);
     }
 
-    @Override
     public void buyDrug(BuyDrugsRequest buyDrugsRequest) {
-        Drug drug = repository.findByName(buyDrugsRequest.getDrugName())
+        Drug drug = repository.findDrugByName(buyDrugsRequest.getDrugName())
                 .orElseThrow(() -> new IllegalArgumentException("Drug not found"));
 
         drug.setQuantity(drug.getQuantity() - buyDrugsRequest.getQuantity());

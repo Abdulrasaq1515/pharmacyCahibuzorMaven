@@ -1,5 +1,6 @@
 package pharmacyDrug.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pharmacyDrug.dtos.AvailableDrugResponse;
 import pharmacyDrug.dtos.BuyDrugsRequest;
@@ -14,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/drugs")
 
 public class DrugController {
-
+    @Autowired
     private final DrugService service;
 
     public DrugController(DrugService service) {  // Spring injects the service

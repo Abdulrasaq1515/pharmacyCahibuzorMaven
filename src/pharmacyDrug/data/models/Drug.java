@@ -1,11 +1,14 @@
 package pharmacyDrug.data.models;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+@Document(collection = "drugs")
 @Data
 public class Drug {
-    private int id;
+    @id
+    private String id;
     private String name;
     private double price;
     private int quantity;

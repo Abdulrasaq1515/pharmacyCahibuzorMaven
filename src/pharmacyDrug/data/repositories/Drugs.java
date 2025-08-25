@@ -1,4 +1,4 @@
-package pharmacyDrug.data.repositories;
+/*package pharmacyDrug.data.repositories;
 
 import org.springframework.stereotype.Repository;
 import pharmacyDrug.data.models.Drug;
@@ -88,4 +88,4 @@ public class Drugs implements DrugsImpl {
         store.clear();
         return removed;
     }
-}
+}*/

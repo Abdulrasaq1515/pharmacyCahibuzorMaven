@@ -1,0 +1,28 @@
+### 1. Add a new drug
+POST http://localhost:8080/drugs/new
+Content-Type: application/json
+
+{
+  "name": "Paracetamol",
+  "price": 5.0,
+  "quantity": 10,
+  "type": "TABLET",
+  "category": "ANALGESIC",
+  "expiryDate": "2025-12-31"
+}
+
+###
+
+### 2. Buy a drug
+POST http://localhost:8080/drugs/buy
+Content-Type: application/json
+
+{
+  "drugName": "Paracetamol",
+  "quantity": 2
+}
+
+###
+
+### 3. Get available drugs
+GET http://localhost:8080/drugs/available

@@ -39,7 +39,7 @@ public class DrugService implements DrugServiceImpl {
         repository.save(drug);
     }
 
-    @Override
+
     public Optional<List<AvailableDrugResponse>> getAvailableDrugs() {
         List<Drug> allDrugs = repository.findAll();
         List<AvailableDrugResponse> available = new ArrayList<>();

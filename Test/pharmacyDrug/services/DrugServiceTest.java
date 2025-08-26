@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 import pharmacyDrug.data.models.Category;
 import pharmacyDrug.data.models.Drug;
 import pharmacyDrug.data.models.Type;
-import pharmacyDrug.data.repositories.Drugs;
+import pharmacyDrug.data.repositories.DrugsImpl;
+import pharmacyDrug.data.repositories.DrugsImpl;
 import pharmacyDrug.dtos.BuyDrugsRequest;
 import pharmacyDrug.dtos.DrugRequest;
 import pharmacyDrug.exceptions.InvalidDrugQuantityException;
@@ -17,15 +18,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DrugServiceTest {
     private DrugService service;
-    private Drugs repo;
+    private DrugsImpl repo;
 
-    @BeforeEach
-    public void setUp() {
-
-        repo = new Drugs();
-        service = new DrugService();
-        repo.clearAll();
-    }
+//    @BeforeEach
+//    public void setUp() {
+//
+//        repo = new DrugsImpl() {};
+//        service = new DrugService();
+//        repo.clearAll();
+//    }
 
     @Test
     public void testAddDrugs() {

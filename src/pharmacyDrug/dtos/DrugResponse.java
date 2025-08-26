@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class DrugResponse {
-    private int drugId;
+    private String drugId;
     private String drugName;
 
 }

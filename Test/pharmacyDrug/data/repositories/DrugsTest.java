@@ -13,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DrugsRepositoryTest {
 
-    private Drugs repo;
+    private DrugsImpl repo;
 
-    @BeforeEach
-    void setUp() {
-        repo = new Drugs();
-        repo.clearAll();
-    }
+//    @BeforeEach
+//    void setUp() {
+//        repo = new Drugs();
+//        repo.clearAll();
+//    }
 
     @Test
     void testCountStartsAtZero() {

@@ -7,7 +7,6 @@ import java.time.LocalDate;
 @Document(collection = "drugs")
 @Data
 public class Drug {
-    @id
     private String id;
     private String name;
     private double price;
